@@ -8,8 +8,10 @@ function calculateRentalCost(days) {
   let discount = 0;
 
   if (days >= 7) {
-    discount = 50;
-  } else if (days >= 3) {
+    const fullWeeks = Math.floor(days / 7);
+
+    discount = fullWeeks * 50;
+  } else if (days >= 3 && days <= 6) {
     discount = 20;
   }
 
